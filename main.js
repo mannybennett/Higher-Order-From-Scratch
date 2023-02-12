@@ -7,9 +7,9 @@ function mapFromScratch(array, callBack) {
 }
 
 const numbers = [1, 2, 3]
-const myFunc = x => x + 1
 
-// console.log(mapFromScratch(numbers, myFunc))
+const myFunc = x => x + 1
+console.log(mapFromScratch(numbers, myFunc))
 
 function reduceFromScratch(array, callback, initialValue) {
   if (!initialValue) {
@@ -28,14 +28,17 @@ function reduceFromScratch(array, callback, initialValue) {
 }
 
 const myFunc2 = (acc, curr) => acc + curr
-// console.log(reduceFromScratch(numbers, myFunc2, 5))
+console.log(reduceFromScratch(numbers, myFunc2, 5))
 
-function filterFromScratch(array, callback) {
+function filterFromScratch(array, callBack) {
   const newArr = []
   for (let i=0; i < array.length; i++) {
-    if ('something') {
-      newArr.push(callBack(array[i]))
+    if (callBack(array[i])) {
+      newArr.push(array[i])
     }
   }
   return newArr
 }
+
+const myFunc3 = num => num > 1
+console.log(filterFromScratch(numbers, myFunc3))
